@@ -58,9 +58,14 @@ const turnOn = () => {
             console.log(track.getSettings())
 
             setTimeout(() => {
-                window.track.applyConstraints({
-                    advanced: [{torch: true}]
-                });
+                try {
+                    window.track.applyConstraints({
+                        advanced: [{torch: true}]
+                    });
+
+                } catch ((error) => {
+                    console.log('applyConstraints error', error)
+                })
 
             }, 5000)
             console.log(track.getConstraints())
