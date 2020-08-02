@@ -40,7 +40,7 @@ const turnOn = () => {
             facingMode: ['environment'],
             height: {ideal: 1080},
             width: {ideal: 1920},
-            torch: true,
+            // torch: true,
         }
         }).then(stream => {
         track = stream.getVideoTracks()[0];
@@ -51,9 +51,9 @@ const turnOn = () => {
         // const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
 
             //todo: check if camera has a torch
-            track.applyConstraints({
-                advanced: [{torch: false}]
-            });
+            // track.applyConstraints({
+            //     advanced: [{torch: false}]
+            // });
             console.log(track.getConstraints())
             console.log(track.getSettings())
 
