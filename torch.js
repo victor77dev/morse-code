@@ -63,27 +63,27 @@ const turnOn = () => {
             console.log(track.getSettings())
             window.track = track;
 
-            setTimeout(() => {
-                console.log('end timeout')
-                track.applyConstraints({
-                    advanced: [{torch: false}]
-                }).then(() => {
-                    console.log('Set torch false')
-                    console.log(track.getConstraints())
-                }).catch((error) => {
+            // setTimeout(() => {
+            //     console.log('end timeout')
+            //     track.applyConstraints({
+            //         advanced: [{torch: false}]
+            //     }).then(() => {
+            //         console.log('Set torch false')
+            //         console.log(track.getConstraints())
+            //     }).catch((error) => {
 
-                    console.log('torch false error', error)
-                    console.log(track.getConstraints())
-                });
-                console.log(track.getConstraints())
-                console.log(track.getSettings())
+            //         console.log('torch false error', error)
+            //         console.log(track.getConstraints())
+            //     });
+            //     console.log(track.getConstraints())
+            //     console.log(track.getSettings())
 
-                track.applyConstraints({
-                    advanced: {torch: false},
-                    torch: false,
-                });
+            //     track.applyConstraints({
+            //         advanced: {torch: false},
+            //         torch: false,
+            //     });
 
-            }, 3000)
+            // }, 3000)
         });
         });
     });
