@@ -56,6 +56,12 @@ const turnOn = () => {
                 advanced: [{torch: true}]
             });
 
+            setTimeout(() => {
+                track.applyConstraints({
+                    advanced: [{torch: false}]
+                });
+
+            })
         });
         });
     });
