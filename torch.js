@@ -53,8 +53,16 @@ const turnOn = () => {
 
             //todo: check if camera has a torch
             track.applyConstraints({
+                advanced: [{torch: false}]
+            });
+            console.log(track.getConstraints())
+            console.log(track.getSettings())
+
+            track.applyConstraints({
                 advanced: [{torch: true}]
             });
+            console.log(track.getConstraints())
+            console.log(track.getSettings())
             window.track = track;
 
             setTimeout(() => {
