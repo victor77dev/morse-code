@@ -61,7 +61,7 @@ const turnOn = () => {
                     advanced: [{torch: false}]
                 });
 
-            })
+            }, 3000)
         });
         });
     });
