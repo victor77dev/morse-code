@@ -39,14 +39,15 @@ const turnOn = () => {
             deviceId: camera.deviceId,
             facingMode: ['environment'],
             height: {ideal: 1080},
-            width: {ideal: 1920}
+            width: {ideal: 1920},
+            torch: true,
         }
         }).then(stream => {
         track = stream.getVideoTracks()[0];
 
         console.log('track', track)
         //Create image capture object and get camera capabilities
-        const imageCapture = new ImageCapture(track)
+        // const imageCapture = new ImageCapture(track)
         // const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
 
             //todo: check if camera has a torch
