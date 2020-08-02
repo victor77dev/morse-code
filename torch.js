@@ -62,7 +62,7 @@ const turnOn = () => {
                     advanced: [{torch: true}]
                 });
 
-            }, 2000)
+            }, 5000)
             console.log(track.getConstraints())
             console.log(track.getSettings())
             window.track = track;
