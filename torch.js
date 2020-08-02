@@ -1,6 +1,7 @@
 let torchOff = true;
 
 const isOff = () => {
+    console.log(torchOff)
     return torchOff;
 }
 
@@ -79,6 +80,7 @@ const turnOn = () => {
         }).then(stream => {
         const track = stream.getVideoTracks()[0];
 
+        console.log('track', track)
         //Create image capture object and get camera capabilities
         const imageCapture = new ImageCapture(track)
         const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
