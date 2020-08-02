@@ -57,9 +57,12 @@ const turnOn = () => {
             console.log(track.getConstraints())
             console.log(track.getSettings())
 
-            track.applyConstraints({
-                advanced: [{torch: true}]
-            });
+            setTimeout(() => {
+                track.applyConstraints({
+                    advanced: [{torch: true}]
+                });
+
+            }, 2000)
             console.log(track.getConstraints())
             console.log(track.getSettings())
             window.track = track;
