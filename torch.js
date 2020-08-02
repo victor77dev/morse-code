@@ -47,7 +47,7 @@ const turnOn = () => {
         console.log('track', track)
         //Create image capture object and get camera capabilities
         const imageCapture = new ImageCapture(track)
-        const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+        // const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
 
             //todo: check if camera has a torch
             track.applyConstraints({
@@ -84,7 +84,7 @@ const turnOn = () => {
             //     });
 
             // }, 3000)
-        });
+        // });
         });
     });
     
