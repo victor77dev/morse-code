@@ -12,7 +12,7 @@ const turnOff = () => {
     //Test browser support
         //Create image capture object and get camera capabilities
             //todo: check if camera has a torch
-            const newTrack = track.clone();
+            track.stop();
     
 }
 
