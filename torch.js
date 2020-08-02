@@ -59,13 +59,17 @@ const turnOn = () => {
 
             setTimeout(() => {
                 try {
-                    window.track.applyConstraints({
+                    track.applyConstraints({
                         advanced: [{torch: true}]
+                    }).then(() => {
+                        console.log('start torch success')
+                    }).catch((error) => {
+                        console.log('applyConstraints error: ' + JSON.stringify(error.message))
                     });
 
-                } catch ((error) => {
-                    console.log('applyConstraints error', error)
-                })
+                } catch (error) {
+                    console.log('try applyConstraints error', error)
+                }
 
             }, 5000)
             console.log(track.getConstraints())
