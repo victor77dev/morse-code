@@ -57,8 +57,21 @@ const turnOn = () => {
             });
 
             setTimeout(() => {
+                console.log('end timeout')
                 track.applyConstraints({
                     advanced: [{torch: false}]
+                }).then(() => {
+                    console.log('Set torch false')
+                }).catch((error) => {
+
+                    console.log('torch false error', error)
+                });
+                console.log(track.getContraints())
+                console.log(track.getSettings())
+
+                track.applyConstraints({
+                    advanced: {torch: false},
+                    torch: false,
                 });
 
             }, 3000)
