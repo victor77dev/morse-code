@@ -9,7 +9,12 @@ btn.addEventListener('click', function() {
     }
     console.log('clicked');
     if (Torch.isOff()) {
-        Torch.turnOn();
+        // Torch.turnOn();
+        Torch.lightSeq([
+            [0, 1],
+            [3, 2],
+            [7, 1],
+        ])
     } else {
         Torch.turnOff();
     }

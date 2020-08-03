@@ -6,6 +6,20 @@ const isOff = () => {
     return torchOff;
 }
 
+const lightSeq = (timeSeq) => {
+    for (let i = 0; i < timeSeq.length; i++) {
+        const [start, duration] = timeSeq[i];
+        setTimeout(() => {
+            turnOn(duration * 1000);
+        }, start * 1000)
+    }
+}
+
+const turnOn = (timeout=1000) => {
+    _turnOn();
+    setTimeout(turnOff, timeout);
+}
+
 const turnOff = () => {
     console.log('Turn Off')
     torchOff = !torchOff;
@@ -16,7 +30,7 @@ const turnOff = () => {
     
 }
 
-const turnOn = () => {
+const _turnOn = () => {
     console.log('Turn On')
     torchOff = !torchOff;
     //Test browser support
@@ -48,7 +62,7 @@ const turnOn = () => {
         console.log('track', track)
         //Create image capture object and get camera capabilities
         // const imageCapture = new ImageCapture(track)
-        // const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+        const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
 
             //todo: check if camera has a torch
             // track.applyConstraints({
@@ -57,7 +71,7 @@ const turnOn = () => {
             console.log(track.getConstraints())
             console.log(track.getSettings())
 
-            setTimeout(() => {
+            // setTimeout(() => {
                 try {
                     track.applyConstraints({
                         advanced: [{torch: true}]
@@ -75,7 +89,7 @@ const turnOn = () => {
                     console.log('try applyConstraints error', error)
                 }
 
-            }, 5000)
+            // }, 5000)
             // console.log(track.getConstraints())
             // console.log(track.getSettings())
             window.track = track;
@@ -101,7 +115,7 @@ const turnOn = () => {
             //     });
 
             // }, 3000)
-        // });
+        });
         });
     });
     
@@ -112,6 +126,7 @@ const turnOn = () => {
 
 export const Torch = {
     isOff,
+    lightSeq,
     turnOff,
     turnOn,
 };
